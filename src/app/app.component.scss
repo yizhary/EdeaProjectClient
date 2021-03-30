@@ -1,0 +1,115 @@
+ table {
+  width: 100%;
+} 
+.table-header-rotated {
+  border-collapse: collapse;
+  .csstransforms & td {
+    width: 10px;
+  }
+  .no-csstransforms & th {
+    padding: 5px 10px;
+  }
+  td {
+    text-align: center;
+    padding: 10px 5px;
+    border: 1px solid #ccc;
+   
+    
+  }
+  .csstransforms & th.rotate {
+    height: 140px;
+    white-space: nowrap;
+    // Firefox needs the extra DIV for some reason, otherwise the text disappears if you rotate 
+    > div {
+      transform: 
+        // Magic Numbers
+        translate(25px, 51px)
+        // 45 is really 360-45
+        rotate(315deg);
+      width: 30px;
+    }
+    > div > span {
+      border-bottom: 1px solid #ccc;
+      padding: 5px 10px;
+    }
+  }
+  th.row-header {
+    padding: 0 10px;
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+    background-color: #EBFF89;
+  }
+}
+.mat-row:nth-child(even){
+  background-color: #D0D0D0;
+}
+      
+.mat-row:nth-child(odd){
+  background-color:white;
+}
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+} 
+.column1 {
+  
+  float: left;
+  width:70%;
+  padding: 5px;
+}
+.column2 {
+  float: right;
+  width: 30%;
+  padding: 5px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+  font-size: smaller;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .column1 {
+    width: 100%;
+  }
+  .column2 {
+    width: 100%;
+  }
+
+}
+@media screen and (max-width: 300px) {
+  .showOrNot {
+    display: none;
+  }
+}
